@@ -17,6 +17,7 @@ import RenovationTeamPage from './pages/renovation/RenovationTeamPage';
 import RenovationSupplierDetailPage from './pages/renovation/RenovationSupplierDetailPage';
 import RenovationGuidePage from './pages/renovation/RenovationGuidePage';
 import RenovationConsensusPage from './pages/renovation/RenovationConsensusPage';
+import PropertyReservationPage from './pages/PropertyReservationPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/renovation-collaboration/suppliers/:id" element={<RenovationSupplierDetailPage />} />
             <Route path="/renovation-collaboration/guide" element={<RenovationGuidePage />} />
             <Route path="/renovation-collaboration/consensus" element={<RenovationConsensusPage />} />
+            <Route path="/property/:id/reservations" element={<PropertyReservationPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
