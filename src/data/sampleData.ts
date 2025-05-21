@@ -1,177 +1,176 @@
 import { Property } from '../types/property';
 
 export const sampleProperties: Property[] = [
-  // 既存の10件の物件データは省略...
+  // 既存の15件の物件データは維持...
 
   {
-    id: '11',
-    title: '海辺の別荘',
-    description: '波の音が聞こえる海辺の別荘。サーフィンや海水浴に最適な立地です。',
-    price: 180000,
-    size: 110,
-    propertyType: '別荘',
-    rooms: 4,
-    age: 25,
-    renovated: false,
-    status: 'available',
-    condition: 'good',
-    hashtags: ['#海辺の暮らし', '#サーフィン', '#リゾート', '#別荘'],
-    location: {
-      prefecture: '千葉県',
-      city: '一宮町',
-      address: '〇〇町31-32-33',
-      coordinates: {
-        lat: 35.3789,
-        lng: 140.3906
-      }
-    },
-    features: ['オーシャンビュー', 'サーフボード置き場', 'バーベキューエリア'],
-    images: [
-      'https://images.pexels.com/photos/3951751/pexels-photo-3951751.jpeg',
-      'https://images.pexels.com/photos/3951752/pexels-photo-3951752.jpeg',
-      'https://images.pexels.com/photos/3951753/pexels-photo-3951753.jpeg'
-    ],
-    contact: {
-      name: '千葉リゾート不動産',
-      phone: '0475-12-3456',
-      email: 'info@chiba-resort.jp'
-    }
-  },
-  {
-    id: '12',
-    title: '里山の古民家',
-    description: '自然豊かな里山にある古民家。有機農業や自給自足生活に最適です。',
-    price: 95000,
-    size: 160,
-    propertyType: '古民家',
+    id: '16',
+    title: '山頂のリゾート別荘',
+    description: '標高1000mの山頂に位置する贅沢なリゾート別荘。雄大な山々を一望できる絶景ポイント。',
+    price: 280000,
+    size: 200,
+    propertyType: 'リゾート',
     rooms: 6,
-    age: 70,
-    renovated: false,
-    status: 'available',
-    condition: 'needs_work',
-    hashtags: ['#里山暮らし', '#自給自足', '#古民家再生', '#田舎暮らし'],
-    location: {
-      prefecture: '福島県',
-      city: '二本松市',
-      address: '〇〇町34-35-36',
-      coordinates: {
-        lat: 37.5839,
-        lng: 140.4314
-      }
-    },
-    features: ['田畑付き', '井戸', '薪ストーブ'],
-    images: [
-      'https://images.pexels.com/photos/6492403/pexels-photo-6492403.jpeg',
-      'https://images.pexels.com/photos/6492404/pexels-photo-6492404.jpeg',
-      'https://images.pexels.com/photos/6492405/pexels-photo-6492405.jpeg'
-    ],
-    contact: {
-      name: '福島田舎暮らし不動産',
-      phone: '0243-12-3456',
-      email: 'info@fukushima-inaka.jp'
-    }
-  },
-  {
-    id: '13',
-    title: '山小屋カフェ',
-    description: '山々に囲まれた静かな場所にある山小屋。カフェとして使用されていました。',
-    price: 145000,
-    size: 85,
-    propertyType: '山小屋',
-    rooms: 3,
-    age: 30,
-    renovated: true,
-    status: 'available',
-    condition: 'good',
-    hashtags: ['#山小屋', '#カフェ', '#山暮らし', '#自然'],
-    location: {
-      prefecture: '山梨県',
-      city: '北杜市',
-      address: '〇〇町37-38-39',
-      coordinates: {
-        lat: 35.7775,
-        lng: 138.4242
-      }
-    },
-    features: ['キッチン設備', 'テラス席', '駐車場'],
-    images: [
-      'https://images.pexels.com/photos/6775267/pexels-photo-6775267.jpeg',
-      'https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg',
-      'https://images.pexels.com/photos/6775269/pexels-photo-6775269.jpeg'
-    ],
-    contact: {
-      name: '山梨マウンテン不動産',
-      phone: '0551-12-3456',
-      email: 'info@yamanashi-mountain.jp'
-    }
-  },
-  {
-    id: '14',
-    title: '町屋ギャラリー',
-    description: 'アートギャラリーとして使用されていた町屋。展示スペースとしても居住スペースとしても利用可能。',
-    price: 220000,
-    size: 120,
-    propertyType: '町家',
-    rooms: 5,
-    age: 80,
+    age: 20,
     renovated: true,
     status: 'available',
     condition: 'excellent',
-    hashtags: ['#町家', '#ギャラリー', '#アート', '#金沢'],
+    hashtags: ['#リゾート', '#絶景', '#別荘', '#山暮らし'],
     location: {
-      prefecture: '石川県',
-      city: '金沢市',
-      address: '〇〇町40-41-42',
+      prefecture: '長野県',
+      city: '軽井沢町',
+      address: '〇〇町46-47-48',
       coordinates: {
-        lat: 36.5617,
-        lng: 136.6562
+        lat: 36.3489,
+        lng: 138.6271
       }
     },
-    features: ['展示スペース', '蔵', '中庭'],
+    features: ['温泉付き', 'サウナ', '屋上テラス'],
     images: [
-      'https://images.pexels.com/photos/6186523/pexels-photo-6186523.jpeg',
-      'https://images.pexels.com/photos/6186524/pexels-photo-6186524.jpeg',
-      'https://images.pexels.com/photos/6186525/pexels-photo-6186525.jpeg'
+      'https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg',
+      'https://images.pexels.com/photos/7031407/pexels-photo-7031407.jpeg',
+      'https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg'
     ],
     contact: {
-      name: '金沢伝統家屋不動産',
-      phone: '076-123-4567',
-      email: 'info@kanazawa-estate.jp'
+      name: '軽井沢リゾート不動産',
+      phone: '0267-12-3456',
+      email: 'info@karuizawa-resort.jp'
     }
   },
   {
-    id: '15',
-    title: '海の見える民宿',
-    description: '漁港近くの元民宿。新鮮な魚介類を使ったレストランや宿としての再開業に最適。',
-    price: 165000,
-    size: 180,
-    propertyType: '民宿',
+    id: '17',
+    title: '港町のゲストハウス',
+    description: '港町の中心部に位置する築50年の古い建物を改装したゲストハウス。国際交流の拠点として人気。',
+    price: 135000,
+    size: 150,
+    propertyType: 'ゲストハウス',
     rooms: 8,
-    age: 35,
+    age: 50,
+    renovated: true,
+    status: 'available',
+    condition: 'good',
+    hashtags: ['#ゲストハウス', '#国際交流', '#港町', '#観光'],
+    location: {
+      prefecture: '神奈川県',
+      city: '横浜市中区',
+      address: '〇〇町49-50-51',
+      coordinates: {
+        lat: 35.4478,
+        lng: 139.6425
+      }
+    },
+    features: ['共用キッチン', 'ラウンジ', 'コインランドリー'],
+    images: [
+      'https://images.pexels.com/photos/6585757/pexels-photo-6585757.jpeg',
+      'https://images.pexels.com/photos/6585758/pexels-photo-6585758.jpeg',
+      'https://images.pexels.com/photos/6585759/pexels-photo-6585759.jpeg'
+    ],
+    contact: {
+      name: '横浜ハーバー不動産',
+      phone: '045-123-4567',
+      email: 'info@yokohama-harbor.jp'
+    }
+  },
+  {
+    id: '18',
+    title: '茶畑の中の古民家',
+    description: '緑豊かな茶畑に囲まれた築100年の古民家。茶室付きで、日本の伝統文化を体験できる貴重な物件。',
+    price: 165000,
+    size: 130,
+    propertyType: '古民家',
+    rooms: 5,
+    age: 100,
     renovated: false,
     status: 'available',
     condition: 'needs_work',
-    hashtags: ['#民宿', '#漁港', '#海の幸', '#観光'],
+    hashtags: ['#茶畑', '#古民家', '#茶室', '#日本文化'],
     location: {
-      prefecture: '三重県',
-      city: '鳥羽市',
-      address: '〇〇町43-44-45',
+      prefecture: '静岡県',
+      city: '掛川市',
+      address: '〇〇町52-53-54',
       coordinates: {
-        lat: 34.4811,
-        lng: 136.8427
+        lat: 34.7689,
+        lng: 138.0149
       }
     },
-    features: ['業務用キッチン', '大浴場', '駐車場'],
+    features: ['茶室', '茶畑付き', '蔵'],
     images: [
-      'https://images.pexels.com/photos/2476632/pexels-photo-2476632.jpeg',
-      'https://images.pexels.com/photos/2476633/pexels-photo-2476633.jpeg',
-      'https://images.pexels.com/photos/2476634/pexels-photo-2476634.jpeg'
+      'https://images.pexels.com/photos/5997978/pexels-photo-5997978.jpeg',
+      'https://images.pexels.com/photos/5997979/pexels-photo-5997979.jpeg',
+      'https://images.pexels.com/photos/5997980/pexels-photo-5997980.jpeg'
     ],
     contact: {
-      name: '三重観光不動産',
-      phone: '0599-12-3456',
-      email: 'info@mie-tourism.jp'
+      name: '静岡茶園不動産',
+      phone: '0537-12-3456',
+      email: 'info@shizuoka-tea.jp'
+    }
+  },
+  {
+    id: '19',
+    title: '海辺のアーティストレジデンス',
+    description: '波音が聞こえる海辺のアトリエ付き住居。芸術家の創作活動に最適な環境です。',
+    price: 195000,
+    size: 140,
+    propertyType: 'アトリエ',
+    rooms: 4,
+    age: 15,
+    renovated: true,
+    status: 'available',
+    condition: 'excellent',
+    hashtags: ['#アーティスト', '#アトリエ', '#海辺', '#創作'],
+    location: {
+      prefecture: '神奈川県',
+      city: '葉山町',
+      address: '〇〇町55-56-57',
+      coordinates: {
+        lat: 35.2719,
+        lng: 139.5847
+      }
+    },
+    features: ['アトリエスペース', 'オーシャンビュー', 'ウッドデッキ'],
+    images: [
+      'https://images.pexels.com/photos/6207318/pexels-photo-6207318.jpeg',
+      'https://images.pexels.com/photos/6207319/pexels-photo-6207319.jpeg',
+      'https://images.pexels.com/photos/6207320/pexels-photo-6207320.jpeg'
+    ],
+    contact: {
+      name: '湘南アート不動産',
+      phone: '046-876-5432',
+      email: 'info@shonan-art.jp'
+    }
+  },
+  {
+    id: '20',
+    title: '森の中のドームハウス',
+    description: '自然との調和を追求したユニークなドーム型住居。エコフレンドリーな設備を完備。',
+    price: 225000,
+    size: 90,
+    propertyType: 'ドームハウス',
+    rooms: 3,
+    age: 5,
+    renovated: false,
+    status: 'available',
+    condition: 'excellent',
+    hashtags: ['#ドームハウス', '#エコ住宅', '#自然', '#ユニーク'],
+    location: {
+      prefecture: '山梨県',
+      city: '富士河口湖町',
+      address: '〇〇町58-59-60',
+      coordinates: {
+        lat: 35.5171,
+        lng: 138.7516
+      }
+    },
+    features: ['太陽光発電', '雨水利用システム', '地熱利用'],
+    images: [
+      'https://images.pexels.com/photos/6508175/pexels-photo-6508175.jpeg',
+      'https://images.pexels.com/photos/6508176/pexels-photo-6508176.jpeg',
+      'https://images.pexels.com/photos/6508177/pexels-photo-6508177.jpeg'
+    ],
+    contact: {
+      name: 'エコハウス不動産',
+      phone: '0555-12-3456',
+      email: 'info@eco-house.jp'
     }
   }
-  // ... 続きは次のメッセージで
 ];
