@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, FileText, Bell, Settings, Users, PlusCircle, TrendingUp, DollarSign, ArrowUpRight, ArrowDownRight, ChevronRight, Calendar } from 'lucide-react';
+import { Building, FileText, Bell, Settings, Users, PlusCircle, TrendingUp, DollarSign, ArrowUpRight, ArrowDownRight, ChevronRight, Calendar, Image } from 'lucide-react';
 import StockChart from '../components/charts/StockChart';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const OwnerDashboardPage: React.FC = () => {
       <div className="container mx-auto px-4">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">所有者ダッシュボード</h1>
 
-        {/* Portfolio Overview */}
+        {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white p-6 rounded-xl shadow-md">
             <div className="flex items-center justify-between mb-4">
@@ -98,13 +98,22 @@ const OwnerDashboardPage: React.FC = () => {
                     <div className="text-right">
                       <p className="font-semibold text-gray-800">現在値: ¥11,520</p>
                       <p className="text-sm text-green-600">+¥152,000</p>
-                      <Link
-                        to="/property/1/reservations"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mt-2"
-                      >
-                        <Calendar className="w-4 h-4 mr-1" />
-                        予約管理
-                      </Link>
+                      <div className="flex justify-end space-x-2 mt-2">
+                        <Link
+                          to="/property/1/reservations"
+                          className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
+                        >
+                          <Calendar className="w-4 h-4 mr-1" />
+                          予約管理
+                        </Link>
+                        <Link
+                          to="/property/1/album"
+                          className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
+                        >
+                          <Image className="w-4 h-4 mr-1" />
+                          アルバム
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -126,13 +135,22 @@ const OwnerDashboardPage: React.FC = () => {
                     <div className="text-right">
                       <p className="font-semibold text-gray-800">現在値: ¥14,130</p>
                       <p className="text-sm text-red-600">-¥43,500</p>
-                      <Link
-                        to="/property/2/reservations"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mt-2"
-                      >
-                        <Calendar className="w-4 h-4 mr-1" />
-                        予約管理
-                      </Link>
+                      <div className="flex justify-end space-x-2 mt-2">
+                        <Link
+                          to="/property/2/reservations"
+                          className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
+                        >
+                          <Calendar className="w-4 h-4 mr-1" />
+                          予約管理
+                        </Link>
+                        <Link
+                          to="/property/2/album"
+                          className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
+                        >
+                          <Image className="w-4 h-4 mr-1" />
+                          アルバム
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -154,13 +172,22 @@ const OwnerDashboardPage: React.FC = () => {
                     <div className="text-right">
                       <p className="font-semibold text-gray-800">現在値: ¥13,000</p>
                       <p className="text-sm text-green-600">+¥75,000</p>
-                      <Link
-                        to="/property/3/reservations"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mt-2"
-                      >
-                        <Calendar className="w-4 h-4 mr-1" />
-                        予約管理
-                      </Link>
+                      <div className="flex justify-end space-x-2 mt-2">
+                        <Link
+                          to="/property/3/reservations"
+                          className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
+                        >
+                          <Calendar className="w-4 h-4 mr-1" />
+                          予約管理
+                        </Link>
+                        <Link
+                          to="/property/3/album"
+                          className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
+                        >
+                          <Image className="w-4 h-4 mr-1" />
+                          アルバム
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
