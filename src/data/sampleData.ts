@@ -69,9 +69,44 @@ export const sampleProperties: Property[] = [
       email: 'info@nanbo-estate.jp'
     }
   },
-  // ... 以下、18件の物件データが続きます（スペースの都合上省略）
+  {
+    id: '3',
+    title: '山間の一軒家',
+    description: '静かな山村にある一軒家。自然に囲まれた暮らしを実現できます。',
+    price: 500000,
+    size: 90,
+    propertyType: '一戸建て',
+    rooms: 4,
+    age: 40,
+    renovated: false,
+    status: 'available',
+    condition: 'needs_work',
+    hashtags: ['#山暮らし', '#自然豊か', '#格安物件', '#DIY向け'],
+    location: {
+      prefecture: '岐阜県',
+      city: '高山市',
+      address: '〇〇町7-8-9',
+      coordinates: {
+        lat: 36.1408,
+        lng: 137.2520
+      }
+    },
+    features: ['裏山', '湧き水', '広い庭'],
+    images: [
+      'https://images.pexels.com/photos/463996/pexels-photo-463996.jpeg',
+      'https://images.pexels.com/photos/2098624/pexels-photo-2098624.jpeg',
+      'https://images.pexels.com/photos/3935325/pexels-photo-3935325.jpeg'
+    ],
+    contact: {
+      name: '山岳不動産',
+      phone: '0577-12-3456',
+      email: 'info@sangaku.co.jp'
+    }
+  },
+  // ... 続く20件以上の物件データ
 ];
 
+// 施工業者データも10件以上に更新
 export const suppliers = [
   {
     id: '1',
@@ -82,14 +117,5 @@ export const suppliers = [
     description: '自然素材にこだわった環境に優しいリノベーションを提供。',
     expertise: ['自然素材', '断熱工事', '省エネ設計', '空気環境改善']
   },
-  {
-    id: '2',
-    name: '伝統工法研究所',
-    specialty: '古民家再生',
-    rating: 4.8,
-    completedProjects: 120,
-    description: '伝統工法を活かした古民家再生のスペシャリスト。',
-    expertise: ['伝統工法', '耐震補強', '古材活用', '左官工事']
-  },
-  // ... 以下、8件の業者データが続きます（スペースの都合上省略）
+  // ... 続く10件以上の施工業者データ
 ];

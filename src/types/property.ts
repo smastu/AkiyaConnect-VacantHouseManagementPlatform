@@ -1,36 +1,16 @@
-export interface PropertyValue {
-  timestamp: string;
-  value: number;
-  change: number;
-  changePercent: number;
-}
-
-export interface PropertyShare {
-  id: string;
-  propertyId: string;
-  shares: number;
-  purchasePrice: number;
-  purchaseDate: string;
-}
-
 export interface Property {
   id: string;
   title: string;
   description: string;
-  totalShares: number;
-  availableShares: number;
-  currentPrice: number;
-  initialPrice: number;
-  priceHistory: PropertyValue[];
-  marketCap: number;
-  tradingVolume: number;
-  propertyType: string;
+  price: number;
   size: number;
+  propertyType: string;
   rooms: number;
   age: number;
   renovated: boolean;
-  status: 'pre_ipo' | 'trading' | 'suspended';
-  condition: 'excellent' | 'good' | 'fair' | 'needs_work' | 'poor';
+  status: 'available' | 'pending';
+  condition: 'excellent' | 'good' | 'needs_work';
+  hashtags: string[];
   location: {
     prefecture: string;
     city: string;
@@ -38,78 +18,13 @@ export interface Property {
     coordinates: {
       lat: number;
       lng: number;
-    };
+    }
   };
   features: string[];
   images: string[];
-  documents: {
-    type: string;
-    url: string;
+  contact: {
     name: string;
-  }[];
-  renovationHistory: {
-    date: string;
-    description: string;
-    cost: number;
-    valueIncrease: number;
-  }[];
-  financials: {
-    maintenanceCosts: number;
-    expectedRentalIncome: number;
-    propertyTax: number;
-    insuranceCost: number;
+    phone: string;
+    email: string;
   };
-  riskLevel: 'low' | 'medium' | 'high';
-  riskFactors: string[];
-  lastUpdated: string;
-}
-
-export interface Trade {
-  id: string;
-  propertyId: string;
-  type: 'buy' | 'sell';
-  shares: number;
-  pricePerShare: number;
-  totalAmount: number;
-  timestamp: string;
-  status: 'pending' | 'completed' | 'cancelled';
-  buyerId?: string;
-  sellerId?: string;
-}
-
-export interface PropertyAnalytics {
-  propertyId: string;
-  totalTrades: number;
-  averagePrice: number;
-  highestPrice: number;
-  lowestPrice: number;
-  priceVolatility: number;
-  marketSentiment: 'bullish' | 'bearish' | 'neutral';
-  tradingVolume: number;
-  holdingPeriod: number;
-}
-
-export interface IPOApplication {
-  id: string;
-  propertyId: string;
-  ownerInfo: {
-    name: string;
-    contact: string;
-    documents: string[];
-  };
-  propertyDocuments: {
-    type: string;
-    url: string;
-    verified: boolean;
-  }[];
-  valuation: {
-    initialPrice: number;
-    totalShares: number;
-    marketCap: number;
-    justification: string;
-  };
-  status: 'pending' | 'approved' | 'rejected';
-  submissionDate: string;
-  reviewDate?: string;
-  comments?: string[];
 }
