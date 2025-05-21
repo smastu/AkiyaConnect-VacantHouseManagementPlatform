@@ -18,17 +18,9 @@ interface Reservation {
   borderColor?: string;
 }
 
-const PropertyReservationPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const [showReservationModal, setShowReservationModal] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-
-  // サンプルデータ
-  const shareRatio = 0.15; // 15%の出資比率
-  const maxDaysPerYear = Math.floor(365 * shareRatio); // 出資比率に応じた年間予約可能日数
-  const remainingDays = 25; // 残り予約可能日数
-  
-  const reservations: Reservation[] = [
+// 物件ごとの予約データ
+const propertyReservations: { [key: string]: Reservation[] } = {
+  "1": [ // 鎌倉の古民家
     {
       id: '1',
       title: '山田太郎の予約',
@@ -52,18 +44,20 @@ const PropertyReservationPage: React.FC = () => {
     {
       id: '3',
       title: '鈴木一郎の予約',
-      start: '2024-01-20',
-      end: '2024-01-22',
+      start: '2024-02-05',
+      end: '2024-02-07',
       userId: '3',
       userName: '鈴木一郎',
       backgroundColor: '#fb923c',
       borderColor: '#f97316'
-    },
+    }
+  ],
+  "2": [ // 京都町家
     {
       id: '4',
       title: '田中美咲の予約',
-      start: '2024-01-25',
-      end: '2024-01-26',
+      start: '2024-01-20',
+      end: '2024-01-23',
       userId: '4',
       userName: '田中美咲',
       backgroundColor: '#f472b6',
@@ -71,45 +65,136 @@ const PropertyReservationPage: React.FC = () => {
     },
     {
       id: '5',
-      title: '山田太郎の予約',
-      start: '2024-02-05',
-      end: '2024-02-07',
-      userId: '1',
-      userName: '山田太郎',
-      backgroundColor: '#818cf8',
-      borderColor: '#6366f1'
+      title: '山本健一の予約',
+      start: '2024-02-01',
+      end: '2024-02-03',
+      userId: '5',
+      userName: '山本健一',
+      backgroundColor: '#60a5fa',
+      borderColor: '#3b82f6'
     },
     {
       id: '6',
-      title: '佐藤花子の予約',
-      start: '2024-02-12',
+      title: '中村優子の予約',
+      start: '2024-02-10',
       end: '2024-02-14',
-      userId: '2',
-      userName: '佐藤花子',
-      backgroundColor: '#4ade80',
-      borderColor: '#22c55e'
-    },
+      userId: '6',
+      userName: '中村優子',
+      backgroundColor: '#a78bfa',
+      borderColor: '#8b5cf6'
+    }
+  ],
+  "3": [ // 軽井沢コテージ
     {
       id: '7',
-      title: '鈴木一郎の予約',
-      start: '2024-02-18',
-      end: '2024-02-20',
-      userId: '3',
-      userName: '鈴木一郎',
-      backgroundColor: '#fb923c',
-      borderColor: '#f97316'
+      title: '高橋誠の予約',
+      start: '2024-01-25',
+      end: '2024-01-28',
+      userId: '7',
+      userName: '高橋誠',
+      backgroundColor: '#fbbf24',
+      borderColor: '#f59e0b'
     },
     {
       id: '8',
-      title: '田中美咲の予約',
+      title: '渡辺麗子の予約',
+      start: '2024-02-15',
+      end: '2024-02-18',
+      userId: '8',
+      userName: '渡辺麗子',
+      backgroundColor: '#34d399',
+      borderColor: '#10b981'
+    },
+    {
+      id: '9',
+      title: '小林太郎の予約',
       start: '2024-02-23',
       end: '2024-02-25',
-      userId: '4',
-      userName: '田中美咲',
+      userId: '9',
+      userName: '小林太郎',
       backgroundColor: '#f472b6',
       borderColor: '#ec4899'
     }
-  ];
+  ]
+};
+
+// 物件ごとのチャットデータ
+const propertyChats: { [key: string]: Array<{ userName: string; message: string; time: string; borderColor: string }> } = {
+  "1": [
+    {
+      userName: "山田太郎",
+      message: "2/5-7の予約を交換できる方いませんか？",
+      time: "2時間前",
+      borderColor: "border-indigo-500"
+    },
+    {
+      userName: "佐藤花子",
+      message: "私の1/15-17と交換可能です。",
+      time: "1時間前",
+      borderColor: "border-green-500"
+    },
+    {
+      userName: "鈴木一郎",
+      message: "2/5以降で予約可能な日を探しています。",
+      time: "30分前",
+      borderColor: "border-orange-500"
+    }
+  ],
+  "2": [
+    {
+      userName: "田中美咲",
+      message: "1/20-23の期間、どなたか譲っていただけませんか？",
+      time: "3時間前",
+      borderColor: "border-pink-500"
+    },
+    {
+      userName: "山本健一",
+      message: "2/1-3の予約を交換できる方いましたら。",
+      time: "2時間前",
+      borderColor: "border-blue-500"
+    },
+    {
+      userName: "中村優子",
+      message: "2/10-14で予約しました。長期滞在の方すみません。",
+      time: "1時間前",
+      borderColor: "border-purple-500"
+    }
+  ],
+  "3": [
+    {
+      userName: "高橋誠",
+      message: "1/25-28は雪まつりの時期ですね。楽しみです。",
+      time: "4時間前",
+      borderColor: "border-yellow-500"
+    },
+    {
+      userName: "渡辺麗子",
+      message: "2/15-18の予約、キャンセル待ち募集中です。",
+      time: "2時間前",
+      borderColor: "border-emerald-500"
+    },
+    {
+      userName: "小林太郎",
+      message: "2/23-25で予約できました！",
+      time: "1時間前",
+      borderColor: "border-pink-500"
+    }
+  ]
+};
+
+const PropertyReservationPage: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const [showReservationModal, setShowReservationModal] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  // 物件IDに基づいて予約データを取得
+  const reservations = id ? propertyReservations[id] || [] : [];
+  const chats = id ? propertyChats[id] || [] : [];
+
+  // サンプルデータ
+  const shareRatio = 0.15; // 15%の出資比率
+  const maxDaysPerYear = Math.floor(365 * shareRatio); // 出資比率に応じた年間予約可能日数
+  const remainingDays = 25; // 残り予約可能日数
 
   const handleDateClick = (arg: { date: Date }) => {
     setSelectedDate(arg.date);
@@ -197,21 +282,13 @@ const PropertyReservationPage: React.FC = () => {
                 <MessageSquare className="w-5 h-5 text-indigo-600" />
               </div>
               <div className="space-y-4">
-                <div className="border-l-4 border-indigo-500 pl-3 py-2">
-                  <p className="font-semibold text-gray-800">山田太郎</p>
-                  <p className="text-sm text-gray-600">2/5-7の予約を交換できる方いませんか？</p>
-                  <p className="text-xs text-gray-400">2時間前</p>
-                </div>
-                <div className="border-l-4 border-green-500 pl-3 py-2">
-                  <p className="font-semibold text-gray-800">佐藤花子</p>
-                  <p className="text-sm text-gray-600">私の2/12-14と交換可能です。</p>
-                  <p className="text-xs text-gray-400">1時間前</p>
-                </div>
-                <div className="border-l-4 border-orange-500 pl-3 py-2">
-                  <p className="font-semibold text-gray-800">鈴木一郎</p>
-                  <p className="text-sm text-gray-600">2/18-20の予約、どなたか譲っていただけませんか？</p>
-                  <p className="text-xs text-gray-400">30分前</p>
-                </div>
+                {chats.map((chat, index) => (
+                  <div key={index} className={`border-l-4 ${chat.borderColor} pl-3 py-2`}>
+                    <p className="font-semibold text-gray-800">{chat.userName}</p>
+                    <p className="text-sm text-gray-600">{chat.message}</p>
+                    <p className="text-xs text-gray-400">{chat.time}</p>
+                  </div>
+                ))}
               </div>
               <div className="mt-4">
                 <textarea
