@@ -14,6 +14,8 @@ interface Reservation {
   end: string;
   userId: string;
   userName: string;
+  backgroundColor?: string;
+  borderColor?: string;
 }
 
 const PropertyReservationPage: React.FC = () => {
@@ -33,7 +35,9 @@ const PropertyReservationPage: React.FC = () => {
       start: '2024-01-10',
       end: '2024-01-12',
       userId: '1',
-      userName: '山田太郎'
+      userName: '山田太郎',
+      backgroundColor: '#818cf8',
+      borderColor: '#6366f1'
     },
     {
       id: '2',
@@ -41,7 +45,69 @@ const PropertyReservationPage: React.FC = () => {
       start: '2024-01-15',
       end: '2024-01-17',
       userId: '2',
-      userName: '佐藤花子'
+      userName: '佐藤花子',
+      backgroundColor: '#4ade80',
+      borderColor: '#22c55e'
+    },
+    {
+      id: '3',
+      title: '鈴木一郎の予約',
+      start: '2024-01-20',
+      end: '2024-01-22',
+      userId: '3',
+      userName: '鈴木一郎',
+      backgroundColor: '#fb923c',
+      borderColor: '#f97316'
+    },
+    {
+      id: '4',
+      title: '田中美咲の予約',
+      start: '2024-01-25',
+      end: '2024-01-26',
+      userId: '4',
+      userName: '田中美咲',
+      backgroundColor: '#f472b6',
+      borderColor: '#ec4899'
+    },
+    {
+      id: '5',
+      title: '山田太郎の予約',
+      start: '2024-02-05',
+      end: '2024-02-07',
+      userId: '1',
+      userName: '山田太郎',
+      backgroundColor: '#818cf8',
+      borderColor: '#6366f1'
+    },
+    {
+      id: '6',
+      title: '佐藤花子の予約',
+      start: '2024-02-12',
+      end: '2024-02-14',
+      userId: '2',
+      userName: '佐藤花子',
+      backgroundColor: '#4ade80',
+      borderColor: '#22c55e'
+    },
+    {
+      id: '7',
+      title: '鈴木一郎の予約',
+      start: '2024-02-18',
+      end: '2024-02-20',
+      userId: '3',
+      userName: '鈴木一郎',
+      backgroundColor: '#fb923c',
+      borderColor: '#f97316'
+    },
+    {
+      id: '8',
+      title: '田中美咲の予約',
+      start: '2024-02-23',
+      end: '2024-02-25',
+      userId: '4',
+      userName: '田中美咲',
+      backgroundColor: '#f472b6',
+      borderColor: '#ec4899'
     }
   ];
 
@@ -110,6 +176,14 @@ const PropertyReservationPage: React.FC = () => {
                   events={reservations}
                   dateClick={handleDateClick}
                   height="auto"
+                  eventContent={(eventInfo) => {
+                    return (
+                      <div className="p-1">
+                        <div className="text-xs font-semibold">{eventInfo.event.title}</div>
+                        <div className="text-xs">{eventInfo.timeText}</div>
+                      </div>
+                    );
+                  }}
                 />
               </div>
             </div>
@@ -125,13 +199,18 @@ const PropertyReservationPage: React.FC = () => {
               <div className="space-y-4">
                 <div className="border-l-4 border-indigo-500 pl-3 py-2">
                   <p className="font-semibold text-gray-800">山田太郎</p>
-                  <p className="text-sm text-gray-600">1/15-17の予約を交換できる方いませんか？</p>
+                  <p className="text-sm text-gray-600">2/5-7の予約を交換できる方いませんか？</p>
                   <p className="text-xs text-gray-400">2時間前</p>
                 </div>
                 <div className="border-l-4 border-green-500 pl-3 py-2">
                   <p className="font-semibold text-gray-800">佐藤花子</p>
-                  <p className="text-sm text-gray-600">私の1/10-12と交換可能です。</p>
+                  <p className="text-sm text-gray-600">私の2/12-14と交換可能です。</p>
                   <p className="text-xs text-gray-400">1時間前</p>
+                </div>
+                <div className="border-l-4 border-orange-500 pl-3 py-2">
+                  <p className="font-semibold text-gray-800">鈴木一郎</p>
+                  <p className="text-sm text-gray-600">2/18-20の予約、どなたか譲っていただけませんか？</p>
+                  <p className="text-xs text-gray-400">30分前</p>
                 </div>
               </div>
               <div className="mt-4">
