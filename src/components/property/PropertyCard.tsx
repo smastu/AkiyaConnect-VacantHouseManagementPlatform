@@ -1,6 +1,8 @@
+// PropertyCard.tsxの内容を更新
+// ハッシュタグ表示機能を追加
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Home, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, Home, Calendar, ArrowRight, Tag } from 'lucide-react';
 import { Property } from '../../types/property';
 
 interface PropertyCardProps {
@@ -58,6 +60,15 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
             <Calendar className="w-4 h-4 mr-1 text-gray-500" />
             <span>築{property.age}年</span>
           </div>
+        </div>
+        {/* ハッシュタグ */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {property.hashtags?.map((tag, index) => (
+            <span key={index} className="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800">
+              <Tag className="w-3 h-3 mr-1" />
+              {tag}
+            </span>
+          ))}
         </div>
         <Link 
           to={`/properties/${property.id}`}
