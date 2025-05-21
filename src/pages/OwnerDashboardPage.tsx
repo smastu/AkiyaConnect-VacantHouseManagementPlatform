@@ -1,6 +1,7 @@
 import React from 'react';
-import { Building, FileText, Bell, Settings, Users, PlusCircle, TrendingUp, DollarSign, ArrowUpRight, ArrowDownRight, ChevronRight } from 'lucide-react';
+import { Building, FileText, Bell, Settings, Users, PlusCircle, TrendingUp, DollarSign, ArrowUpRight, ArrowDownRight, ChevronRight, Calendar } from 'lucide-react';
 import StockChart from '../components/charts/StockChart';
+import { Link } from 'react-router-dom';
 
 const OwnerDashboardPage: React.FC = () => {
   return (
@@ -97,6 +98,13 @@ const OwnerDashboardPage: React.FC = () => {
                     <div className="text-right">
                       <p className="font-semibold text-gray-800">現在値: ¥11,520</p>
                       <p className="text-sm text-green-600">+¥152,000</p>
+                      <Link
+                        to="/property/1/reservations"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mt-2"
+                      >
+                        <Calendar className="w-4 h-4 mr-1" />
+                        予約管理
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -118,6 +126,13 @@ const OwnerDashboardPage: React.FC = () => {
                     <div className="text-right">
                       <p className="font-semibold text-gray-800">現在値: ¥14,130</p>
                       <p className="text-sm text-red-600">-¥43,500</p>
+                      <Link
+                        to="/property/2/reservations"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mt-2"
+                      >
+                        <Calendar className="w-4 h-4 mr-1" />
+                        予約管理
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -139,6 +154,13 @@ const OwnerDashboardPage: React.FC = () => {
                     <div className="text-right">
                       <p className="font-semibold text-gray-800">現在値: ¥13,000</p>
                       <p className="text-sm text-green-600">+¥75,000</p>
+                      <Link
+                        to="/property/3/reservations"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mt-2"
+                      >
+                        <Calendar className="w-4 h-4 mr-1" />
+                        予約管理
+                      </Link>
                     </div>
                   </div>
                 </div>
