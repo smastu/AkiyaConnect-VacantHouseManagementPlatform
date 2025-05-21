@@ -170,5 +170,175 @@ export const sampleProperties: Property[] = [
       phone: '0537-12-3456',
       email: 'info@shizuoka-tea.jp'
     }
+  },
+  {
+    id: '6',
+    title: '山小屋風コテージ',
+    description: '標高1000mの高原に建つ山小屋風コテージ。薪ストーブと温泉付きで、四季折々の自然を満喫できます。',
+    price: 2100000,
+    size: 75,
+    propertyType: 'コテージ',
+    rooms: 2,
+    age: 15,
+    renovated: true,
+    status: 'available',
+    condition: 'good',
+    hashtags: ['#温泉付き', '#山小屋', '#アウトドア'],
+    location: {
+      prefecture: '長野県',
+      city: '北安曇郡白馬村',
+      address: '〇〇町13-14-15',
+      coordinates: {
+        lat: 36.7000,
+        lng: 137.8300
+      }
+    },
+    features: ['温泉', '薪ストーブ', 'スキー場近く'],
+    images: [
+      'https://images.pexels.com/photos/803975/pexels-photo-803975.jpeg',
+      'https://images.pexels.com/photos/5490330/pexels-photo-5490330.jpeg',
+      'https://images.pexels.com/photos/5490331/pexels-photo-5490331.jpeg'
+    ],
+    contact: {
+      name: '白馬マウンテン不動産',
+      phone: '0261-72-3456',
+      email: 'info@hakuba-mountain.jp'
+    }
+  },
+  {
+    id: '7',
+    title: '海辺のアーティストハウス',
+    description: 'アトリエ付きの築40年の一軒家。海を望む大きな窓と広々としたワークスペースが特徴です。',
+    price: 2900000,
+    size: 110,
+    propertyType: 'アトリエハウス',
+    rooms: 4,
+    age: 40,
+    renovated: false,
+    status: 'available',
+    condition: 'good',
+    hashtags: ['#アトリエ付き', '#海view', '#芸術家向け'],
+    location: {
+      prefecture: '神奈川県',
+      city: '葉山町',
+      address: '〇〇町16-17-18',
+      coordinates: {
+        lat: 35.2716,
+        lng: 139.5847
+      }
+    },
+    features: ['アトリエ', '海view', 'テラス'],
+    images: [
+      'https://images.pexels.com/photos/2476632/pexels-photo-2476632.jpeg',
+      'https://images.pexels.com/photos/2476633/pexels-photo-2476633.jpeg',
+      'https://images.pexels.com/photos/2476634/pexels-photo-2476634.jpeg'
+    ],
+    contact: {
+      name: '湘南アート不動産',
+      phone: '046-876-5432',
+      email: 'info@shonan-art.jp'
+    }
+  },
+  {
+    id: '8',
+    title: '里山の農家民宿',
+    description: '有機農園付きの古民家を改装した民宿。地域コミュニティと連携した農業体験や食育プログラムの実施が可能です。',
+    price: 2400000,
+    size: 180,
+    propertyType: '農家民宿',
+    rooms: 6,
+    age: 70,
+    renovated: true,
+    status: 'available',
+    condition: 'good',
+    hashtags: ['#農園付き', '#民宿', '#体験型'],
+    location: {
+      prefecture: '千葉県',
+      city: '鴨川市',
+      address: '〇〇町19-20-21',
+      coordinates: {
+        lat: 35.1147,
+        lng: 140.0986
+      }
+    },
+    features: ['有機農園', '加工所', '研修室'],
+    images: [
+      'https://images.pexels.com/photos/235725/pexels-photo-235725.jpeg',
+      'https://images.pexels.com/photos/235726/pexels-photo-235726.jpeg',
+      'https://images.pexels.com/photos/235727/pexels-photo-235727.jpeg'
+    ],
+    contact: {
+      name: '里山暮らし不動産',
+      phone: '04-7092-1234',
+      email: 'info@satoyama-life.jp'
+    }
+  },
+  {
+    id: '9',
+    title: '古い蔵をリノベした工房',
+    description: '築150年の蔵をリノベーションした工房兼ギャラリー。伝統工芸や創作活動の拠点として最適です。',
+    price: 1800000,
+    size: 95,
+    propertyType: '蔵',
+    rooms: 3,
+    age: 150,
+    renovated: true,
+    status: 'available',
+    condition: 'good',
+    hashtags: ['#蔵改装', '#ギャラリー', '#工房'],
+    location: {
+      prefecture: '栃木県',
+      city: '益子町',
+      address: '〇〇町22-23-24',
+      coordinates: {
+        lat: 36.4684,
+        lng: 140.0986
+      }
+    },
+    features: ['展示スペース', '作業場', '収蔵庫'],
+    images: [
+      'https://images.pexels.com/photos/6492403/pexels-photo-6492403.jpeg',
+      'https://images.pexels.com/photos/6492404/pexels-photo-6492404.jpeg',
+      'https://images.pexels.com/photos/6492405/pexels-photo-6492405.jpeg'
+    ],
+    contact: {
+      name: '益子クラフト不動産',
+      phone: '0285-72-3456',
+      email: 'info@mashiko-craft.jp'
+    }
+  },
+  {
+    id: '10',
+    title: '森の中の図書館ハウス',
+    description: '約3000冊の蔵書を備えた私設図書館を併設した住居。読書会やワークショップの開催に適しています。',
+    price: 2750000,
+    size: 140,
+    propertyType: '図書館ハウス',
+    rooms: 5,
+    age: 25,
+    renovated: true,
+    status: 'available',
+    condition: 'excellent',
+    hashtags: ['#図書館', '#文化発信', '#複合施設'],
+    location: {
+      prefecture: '東京都',
+      city: '西多摩郡奥多摩町',
+      address: '〇〇町25-26-27',
+      coordinates: {
+        lat: 35.8100,
+        lng: 139.0967
+      }
+    },
+    features: ['図書室', '読書スペース', 'カフェスペース'],
+    images: [
+      'https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg',
+      'https://images.pexels.com/photos/2041541/pexels-photo-2041541.jpeg',
+      'https://images.pexels.com/photos/2041542/pexels-photo-2041542.jpeg'
+    ],
+    contact: {
+      name: 'ブックタウン不動産',
+      phone: '0428-85-1234',
+      email: 'info@booktown.jp'
+    }
   }
 ];
